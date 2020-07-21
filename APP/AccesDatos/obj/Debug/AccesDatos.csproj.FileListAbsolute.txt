@@ -7,3 +7,12 @@ C:\Users\pc\source\repos\proyecto3\AccesDatos\obj\Debug\AccesDatos.csproj.CoreCo
 C:\Users\pc\source\repos\proyecto3\AccesDatos\obj\Debug\AccesDatos.csproj.CopyComplete
 C:\Users\pc\source\repos\proyecto3\AccesDatos\obj\Debug\AccesDatos.dll
 C:\Users\pc\source\repos\proyecto3\AccesDatos\obj\Debug\AccesDatos.pdb
+C:\Users\pc\source\repos\proyecto3\APP\AccesDatos\bin\Debug\AccesDatos.dll
+C:\Users\pc\source\repos\proyecto3\APP\AccesDatos\bin\Debug\AccesDatos.pdb
+C:\Users\pc\source\repos\proyecto3\APP\AccesDatos\bin\Debug\CapaComun.dll
+C:\Users\pc\source\repos\proyecto3\APP\AccesDatos\bin\Debug\CapaComun.pdb
+C:\Users\pc\source\repos\proyecto3\APP\AccesDatos\obj\Debug\AccesDatos.csprojAssemblyReference.cache
+C:\Users\pc\source\repos\proyecto3\APP\AccesDatos\obj\Debug\AccesDatos.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\proyecto3\APP\AccesDatos\obj\Debug\AccesDatos.csproj.CopyComplete
+C:\Users\pc\source\repos\proyecto3\APP\AccesDatos\obj\Debug\AccesDatos.dll
+C:\Users\pc\source\repos\proyecto3\APP\AccesDatos\obj\Debug\AccesDatos.pdb

@@ -9,3 +9,14 @@ C:\Users\pc\source\repos\proyecto3\Dominio\obj\Debug\Dominio.csproj.CoreCompileI
 C:\Users\pc\source\repos\proyecto3\Dominio\obj\Debug\Dominio.csproj.CopyComplete
 C:\Users\pc\source\repos\proyecto3\Dominio\obj\Debug\Dominio.dll
 C:\Users\pc\source\repos\proyecto3\Dominio\obj\Debug\Dominio.pdb
+C:\Users\pc\source\repos\proyecto3\APP\Dominio\bin\Debug\Dominio.dll
+C:\Users\pc\source\repos\proyecto3\APP\Dominio\bin\Debug\Dominio.pdb
+C:\Users\pc\source\repos\proyecto3\APP\Dominio\bin\Debug\AccesDatos.dll
+C:\Users\pc\source\repos\proyecto3\APP\Dominio\bin\Debug\CapaComun.dll
+C:\Users\pc\source\repos\proyecto3\APP\Dominio\bin\Debug\AccesDatos.pdb
+C:\Users\pc\source\repos\proyecto3\APP\Dominio\bin\Debug\CapaComun.pdb
+C:\Users\pc\source\repos\proyecto3\APP\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\pc\source\repos\proyecto3\APP\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\proyecto3\APP\Dominio\obj\Debug\Dominio.csproj.CopyComplete
+C:\Users\pc\source\repos\proyecto3\APP\Dominio\obj\Debug\Dominio.dll
+C:\Users\pc\source\repos\proyecto3\APP\Dominio\obj\Debug\Dominio.pdb
