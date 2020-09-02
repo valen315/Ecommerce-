@@ -43,9 +43,12 @@
             // 
             this.dataGridViewCliente.AllowUserToAddRows = false;
             this.dataGridViewCliente.AllowUserToDeleteRows = false;
+            this.dataGridViewCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCliente.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
             this.dataGridViewCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCliente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewCliente.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewCliente.MultiSelect = false;
             this.dataGridViewCliente.Name = "dataGridViewCliente";
             this.dataGridViewCliente.ReadOnly = true;
             this.dataGridViewCliente.Size = new System.Drawing.Size(875, 372);
@@ -110,6 +113,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCliente";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.FormCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExcel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();

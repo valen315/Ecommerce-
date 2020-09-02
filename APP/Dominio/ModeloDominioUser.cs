@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using AccesDatos;
 using CapaComun.Cache;
 
@@ -20,9 +21,8 @@ namespace Dominio
         private string Pass;
         private string Email;
         private int Telefono;
-        //private string PerfilUsuario;
 
-        public ModeloDominioUser(int id,string usuario,string pass,string nombre,string apellido,string email ,int telefono/*,string perfil*/ )
+        public ModeloDominioUser(int id,string usuario,string pass,string nombre,string apellido,string email ,int telefono )
         {
             this.id = id;
             this.Usuario = usuario;
@@ -31,7 +31,7 @@ namespace Dominio
             this.Apellido = apellido;
             this.Email = email;
             this.Telefono = telefono;
-            //this.PerfilUsuario = perfil;
+            
         }
         public ModeloDominioUser()
         {
@@ -47,7 +47,7 @@ namespace Dominio
             }
            catch(Exception ex)
             {
-                return "Nombre de Usuario registrado, intente con otro ";
+                return "Nombre de Usuario registrado, intente con otro "+ex;
             }
 
         }
@@ -59,7 +59,11 @@ namespace Dominio
         {
             return userDatos.RecuperarContraseña(userRequesting);
         }
-      
+        public void MostrarTablaUsuarios(DataGridView dgv)
+        {
+            UserDatos user = new UserDatos();
+            dgv.DataSource = user.MostrarTablaUsuarios();
+        }
         public void Perfil()
         {
             //Seguridad y permiso

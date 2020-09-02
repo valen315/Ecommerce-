@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EcommerceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Producto" Relationship="EcommerceModel.FK_Producto_Categoria" FromRole="Categoria" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="DatosUsuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Usuario" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Pass" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id_Perfil" Type="Int32" Nullable="false" />
+    <Property Name="Telefono" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Perfil" Relationship="EcommerceModel.FK_DatosUsuario_Perfil" FromRole="DatosUsuario" ToRole="Perfil" />
+    <NavigationProperty Name="Orden" Relationship="EcommerceModel.FK_Orden_DatosUsuario" FromRole="DatosUsuario" ToRole="Orden" />
+  </EntityType>
+  <EntityType Name="Detalle_Orden">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="orden_id" Type="Int32" Nullable="false" />
+    <Property Name="producto_id" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="precio_unitario" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="importe" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Orden" Relationship="EcommerceModel.FK_Detalle_Orden_Orden" FromRole="Detalle_Orden" ToRole="Orden" />
+    <NavigationProperty Name="Producto" Relationship="EcommerceModel.FK_Detalle_Orden_Producto" FromRole="Detalle_Orden" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Marca">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Producto" Relationship="EcommerceModel.FK_Producto_Marca" FromRole="Marca" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Orden">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="total" Type="Decimal" Precision="16" Scale="2" Nullable="false" />
+    <Property Name="id_cliente" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DatosUsuario" Relationship="EcommerceModel.FK_Orden_DatosUsuario" FromRole="Orden" ToRole="DatosUsuario" />
+    <NavigationProperty Name="Detalle_Orden" Relationship="EcommerceModel.FK_Detalle_Orden_Orden" FromRole="Orden" ToRole="Detalle_Orden" />
+  </EntityType>
+  <EntityType Name="Perfil">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DescripcionP" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DatosUsuario" Relationship="EcommerceModel.FK_DatosUsuario_Perfil" FromRole="Perfil" ToRole="DatosUsuario" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_marca" Type="Int32" Nullable="false" />
+    <Property Name="id_categoria" Type="Int32" Nullable="false" />
+    <Property Name="stock" Type="Int32" Nullable="false" />
+    <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="precio_compra" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="precio_venta" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="id_estado" Type="Int32" />
+    <NavigationProperty Name="Categoria" Relationship="EcommerceModel.FK_Producto_Categoria" FromRole="Producto" ToRole="Categoria" />
+    <NavigationProperty Name="Detalle_Orden" Relationship="EcommerceModel.FK_Detalle_Orden_Producto" FromRole="Producto" ToRole="Detalle_Orden" />
+    <NavigationProperty Name="Marca" Relationship="EcommerceModel.FK_Producto_Marca" FromRole="Producto" ToRole="Marca" />
+  </EntityType>
+  <EntityContainer Name="EcommerceEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categoria" EntityType="Self.Categoria" />
+    <EntitySet Name="DatosUsuario" EntityType="Self.DatosUsuario" />
+    <EntitySet Name="Detalle_Orden" EntityType="Self.Detalle_Orden" />
+    <EntitySet Name="Marca" EntityType="Self.Marca" />
+    <EntitySet Name="Orden" EntityType="Self.Orden" />
+    <EntitySet Name="Perfil" EntityType="Self.Perfil" />
+    <EntitySet Name="Producto" EntityType="Self.Producto" />
+    <AssociationSet Name="FK_Producto_Categoria" Association="EcommerceModel.FK_Producto_Categoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DatosUsuario_Perfil" Association="EcommerceModel.FK_DatosUsuario_Perfil">
+      <End Role="Perfil" EntitySet="Perfil" />
+      <End Role="DatosUsuario" EntitySet="DatosUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orden_DatosUsuario" Association="EcommerceModel.FK_Orden_DatosUsuario">
+      <End Role="DatosUsuario" EntitySet="DatosUsuario" />
+      <End Role="Orden" EntitySet="Orden" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalle_Orden_Orden" Association="EcommerceModel.FK_Detalle_Orden_Orden">
+      <End Role="Orden" EntitySet="Orden" />
+      <End Role="Detalle_Orden" EntitySet="Detalle_Orden" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalle_Orden_Producto" Association="EcommerceModel.FK_Detalle_Orden_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="Detalle_Orden" EntitySet="Detalle_Orden" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Producto_Marca" Association="EcommerceModel.FK_Producto_Marca">
+      <End Role="Marca" EntitySet="Marca" />
+      <End Role="Producto" EntitySet="Producto" />
+    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="EcommerceModel.sysdiagrams" />
+  </EntityContainer>
+  <Association Name="FK_Producto_Categoria">
+    <End Type="EcommerceModel.Categoria" Role="Categoria" Multiplicity="1" />
+    <End Type="EcommerceModel.Producto" Role="Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="id_categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DatosUsuario_Perfil">
+    <End Type="EcommerceModel.Perfil" Role="Perfil" Multiplicity="1" />
+    <End Type="EcommerceModel.DatosUsuario" Role="DatosUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfil">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DatosUsuario">
+        <PropertyRef Name="id_Perfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orden_DatosUsuario">
+    <End Type="EcommerceModel.DatosUsuario" Role="DatosUsuario" Multiplicity="1" />
+    <End Type="EcommerceModel.Orden" Role="Orden" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DatosUsuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Orden">
+        <PropertyRef Name="id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalle_Orden_Orden">
+    <End Type="EcommerceModel.Orden" Role="Orden" Multiplicity="1" />
+    <End Type="EcommerceModel.Detalle_Orden" Role="Detalle_Orden" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orden">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Detalle_Orden">
+        <PropertyRef Name="orden_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalle_Orden_Producto">
+    <End Type="EcommerceModel.Producto" Role="Producto" Multiplicity="1" />
+    <End Type="EcommerceModel.Detalle_Orden" Role="Detalle_Orden" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Detalle_Orden">
+        <PropertyRef Name="producto_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Producto_Marca">
+    <End Type="EcommerceModel.Marca" Role="Marca" Multiplicity="1" />
+    <End Type="EcommerceModel.Producto" Role="Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="id_marca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+</Schema>

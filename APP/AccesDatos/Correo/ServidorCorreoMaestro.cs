@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
+using System.Windows.Forms;
 
 namespace AccesDatos.Correo
 {
@@ -44,7 +45,7 @@ namespace AccesDatos.Correo
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show("Error" + ex);
             }
             finally//desechar los objetos creados para liberar recursos
             {

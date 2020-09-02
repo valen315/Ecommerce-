@@ -16,6 +16,7 @@ namespace CapaComun.Cache
         public static string Pass { get; set; }
         public static int Perfil { get; set; }
         public static int Telefono { get; set; }
+        //public static DateTime fecha { get; set; }
 
     }
 }

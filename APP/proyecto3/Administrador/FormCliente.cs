@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
 
 namespace proyecto3
 {
@@ -20,6 +21,12 @@ namespace proyecto3
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormCliente_Load(object sender, EventArgs e)
+        {
+            ModeloDominioUser user = new ModeloDominioUser();
+            user.MostrarTablaUsuarios(dataGridViewCliente);
         }
     }
 }

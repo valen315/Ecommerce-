@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache\CacheCategoriaMarca.cs" />
     <Compile Include="Cache\CacheInicioSesionUser.cs" />
     <Compile Include="Cache\CachePerfil.cs" />
+    <Compile Include="Cache\CacheProductos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

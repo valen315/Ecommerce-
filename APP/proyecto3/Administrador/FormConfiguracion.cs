@@ -34,7 +34,7 @@ namespace proyecto3
             lblTelefono.Text = CacheInicioSesionUser.Telefono.ToString();
             lblUsuario.Text = CacheInicioSesionUser.Usuario;
 
-            //lblPerfil.Text = CacheInicioSesionUser.Perfil.ToString();
+            
             //PANEL
             txtNombre.Text = CacheInicioSesionUser.Nombre;
             txtApellido.Text = CacheInicioSesionUser.Apellido;
@@ -60,12 +60,6 @@ namespace proyecto3
         {
             DatosUsuarios();
             initializePassEditControl();
-        }
-
-        private void linkAbrirPanelEditar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            panelEditar.Visible = true;
-            DatosUsuarios();
         }
 
         private void linkEditarPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -102,7 +96,7 @@ namespace proyecto3
                             apellido: txtApellido.Text,
                             email: txtEmail.Text,
                             telefono: Convert.ToInt32(txtTelefono.Text)
-                            //perfil: null
+                            
                             );
                         var resultado = userModel.EditarPerfilUsuario();
                         MessageBox.Show(resultado);
@@ -128,6 +122,17 @@ namespace proyecto3
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            panelEditar.Visible = true;
+            DatosUsuarios();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

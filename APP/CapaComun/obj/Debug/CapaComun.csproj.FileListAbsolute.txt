@@ -4,3 +4,9 @@ C:\Users\pc\source\repos\proyecto3\CapaComun\obj\Debug\CapaComun.csproj.CoreComp
 C:\Users\pc\source\repos\proyecto3\CapaComun\obj\Debug\CapaComun.dll
 C:\Users\pc\source\repos\proyecto3\CapaComun\obj\Debug\CapaComun.pdb
 C:\Users\pc\source\repos\proyecto3\CapaComun\obj\Debug\CapaComun.csprojAssemblyReference.cache
+C:\Users\pc\source\repos\proyecto3\APP\CapaComun\bin\Debug\CapaComun.dll
+C:\Users\pc\source\repos\proyecto3\APP\CapaComun\bin\Debug\CapaComun.pdb
+C:\Users\pc\source\repos\proyecto3\APP\CapaComun\obj\Debug\CapaComun.csprojAssemblyReference.cache
+C:\Users\pc\source\repos\proyecto3\APP\CapaComun\obj\Debug\CapaComun.csproj.CoreCompileInputs.cache
+C:\Users\pc\source\repos\proyecto3\APP\CapaComun\obj\Debug\CapaComun.dll
+C:\Users\pc\source\repos\proyecto3\APP\CapaComun\obj\Debug\CapaComun.pdb

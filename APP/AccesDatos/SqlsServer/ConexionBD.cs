@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
+
 
 namespace AccesDatos
 {
     public abstract class ConexionBD
     {
-        private readonly string cadenaconexion;
-        // constructor 
-        public ConexionBD()
-        {
-            cadenaconexion = "Data Source=DESKTOP-HU5GM1D\\SQLEXPRESS;Initial Catalog=Ecommerce;Integrated Security=True;Connect Timeout=30";
-        }
+       static private string cadenaconexion=ConfigurationManager.ConnectionStrings["conectarBD"].ConnectionString;
+
+    
         protected SqlConnection GetSqlConnection()
         {
             //parametro:cadena de conexion
             return new SqlConnection(cadenaconexion);
         }
+        
+    
     }
 }

@@ -83,6 +83,27 @@ namespace proyecto3.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3592815_compose_create_edit_edit_file_office_pencil_writing_107734 {
+            get {
+                object obj = ResourceManager.GetObject("3592815-compose-create-edit-edit-file-office-pencil-writing_107734", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592821_garbage_can_general_office_recycle_bin_rubbish_bin_trash_bin_trash_can_107760 {
+            get {
+                object obj = ResourceManager.GetObject("3592821-garbage-can-general-office-recycle-bin-rubbish-bin-trash-bin-trash-can_10" +
+                        "7760", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap browser_10_icon_icons_com_63862 {
             get {
                 object obj = ResourceManager.GetObject("browser-10_icon-icons.com_63862", resourceCulture);
@@ -96,6 +117,26 @@ namespace proyecto3.Properties {
         internal static System.Drawing.Bitmap browser_24_icon_icons_com_63876 {
             get {
                 object obj = ResourceManager.GetObject("browser-24_icon-icons.com_63876", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editar {
+            get {
+                object obj = ResourceManager.GetObject("editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eliminar {
+            get {
+                object obj = ResourceManager.GetObject("eliminar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

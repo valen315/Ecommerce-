@@ -124,16 +124,28 @@
   <data name="1487086362-cancel_81578" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1487086362-cancel_81578.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="browser-24_icon-icons.com_63876" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\browser-24_icon-icons.com_63876.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Excel_2013_234801" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Excel_2013_23480.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Excel_2013_23480" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Excel_2013_23480.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1904666-calculate-close-delete-hide-minimize-minus-remove_122516" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1904666-calculate-close-delete-hide-minimize-minus-remove_122516.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Excel_2013_234801" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Excel_2013_23480.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="browser-24_icon-icons.com_63876" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\browser-24_icon-icons.com_63876.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3592815-compose-create-edit-edit-file-office-pencil-writing_107734" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3592815-compose-create-edit-edit-file-office-pencil-writing_107734.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="3592821-garbage-can-general-office-recycle-bin-rubbish-bin-trash-bin-trash-can_107760" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3592821-garbage-can-general-office-recycle-bin-rubbish-bin-trash-bin-trash-can_107760.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

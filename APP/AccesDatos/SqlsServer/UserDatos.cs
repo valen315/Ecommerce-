@@ -11,9 +11,9 @@ using AccesDatos.Correo;
 namespace AccesDatos
 {
     //hereda de la clase ConexionBD
-   public class UserDatos:ConexionBD
+    public class UserDatos : ConexionBD
     {
-        public void EditarPefil(int id,string nombre ,string apellido , string email,string user,string pass,int telefono)
+        public void EditarPefil(int id, string nombre, string apellido, string email, string user, string pass, int telefono)
         {
             using (var connection = GetSqlConnection())
             {
@@ -21,11 +21,10 @@ namespace AccesDatos
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "update DatosUsuario set  " + 
-                        "Nombre=@nombre,Apellido=@apellido,Email=@email,Usuario=@user,Pass=@pass,Telefono=@telefono where id=@id" ;
-
+                    command.CommandText = "update DatosUsuario set  " +
+                        "Nombre=@nombre,Apellido=@apellido,Email=@email,Usuario=@user,Pass=@pass,Telefono=@telefono where id=@id";
                     command.Parameters.AddWithValue("@nombre", nombre);
-                    command.Parameters.AddWithValue("@apellido",apellido);
+                    command.Parameters.AddWithValue("@apellido", apellido);
                     command.Parameters.AddWithValue("@email", email);
                     command.Parameters.AddWithValue("@user", user);
                     command.Parameters.AddWithValue("@pass", pass);
@@ -36,7 +35,7 @@ namespace AccesDatos
                 }
             }
         }
-        public bool Login(string user ,string pass)
+        public bool Login(string user, string pass)
         {
             using (var connection = GetSqlConnection())
             {
@@ -70,9 +69,9 @@ namespace AccesDatos
             }
         }
 
-        public string RecuperarContraseña(string useRequesting) 
+        public string RecuperarContraseña(string useRequesting)
         {
-            using (var connection= GetSqlConnection())
+            using (var connection = GetSqlConnection())
             {
                 connection.Open();
                 using (var command = new SqlCommand())
@@ -80,25 +79,25 @@ namespace AccesDatos
                     command.Connection = connection;
                     command.CommandText = "select * from DatosUsuario where Usuario=@user or Email=@mail";
                     command.Parameters.AddWithValue("@user", useRequesting);
-                    command.Parameters.AddWithValue("@mail",useRequesting);
+                    command.Parameters.AddWithValue("@mail", useRequesting);
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
 
                     if (reader.Read() == true)
                     {
-                        string Nombre = reader.GetString(1).Trim()+" "+reader.GetString(2).Trim();
+                        string Nombre = reader.GetString(1).Trim() + " " + reader.GetString(2).Trim();
                         string userMail = reader.GetString(3);
                         string accountPassword = reader.GetString(5);
-                        
+
                         var mailServer = new SoporteMail();
                         mailServer.sendMail(
                             subject: "Recuperaro de contraseña",
-                            body: "Hola, "+Nombre+"\nha solicitado recuperar su contraseña, para mayor seguridad recuerde cambiarlo una vez iniciada la sesion.\n"+"\nContraseña: "
+                            body: "Hola, " + Nombre + "\nha solicitado recuperar su contraseña, para mayor seguridad recuerde cambiarlo una vez iniciada la sesion.\n" + "\nContraseña: "
                             + accountPassword, recipientMail: new List<string> { userMail }
                             );
 
                         return "Hola," + Nombre + "\nRevise su casilla de mensajes, para mayor seguridad recuerde cambiar la contraseña\n";
-                            
+
                     }
                     else return "Usuario/correo incorrecto ";
                 }
@@ -106,14 +105,37 @@ namespace AccesDatos
         }
         public void Perfil()
         {
-            
-            if (CacheInicioSesionUser.Perfil ==Convert.ToInt32(CachePerfil.Administrador))
+
+            if (CacheInicioSesionUser.Perfil == Convert.ToInt32(CachePerfil.Administrador))
             {
                 //codigo
             }
-            else if(CacheInicioSesionUser.Perfil==Convert.ToInt32(CachePerfil.Usuario))
+            else if (CacheInicioSesionUser.Perfil == Convert.ToInt32(CachePerfil.Usuario))
             {
                 //codigo
+            }
+        }
+
+
+
+        private SqlDataReader LeerFilas;
+        public DataTable MostrarTablaUsuarios()
+        {
+
+            DataTable Tabla = new DataTable();
+            using (var connection = GetSqlConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "TablaUsuarios";
+                    command.CommandType = CommandType.StoredProcedure;
+                    LeerFilas = command.ExecuteReader();
+                    Tabla.Load(LeerFilas);
+                    LeerFilas.Close();
+                    return Tabla;
+                }
             }
         }
     }
